@@ -553,13 +553,6 @@ export const CERTIFICATIONS_LIST: CertificationItem[] = [
     type: 'Domain Certification',
     badge: 'Google Certified',
   },
-  {
-    id: 'azure',
-    title: 'Azure Fundamentals',
-    issuer: 'Microsoft',
-    type: 'Technical / Cloud',
-    badge: 'Microsoft Certified',
-  },
 ];
 
 export const THOUGHT_LEADERSHIP: ThoughtLeadershipArticle[] = [
