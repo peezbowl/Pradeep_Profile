@@ -7,18 +7,24 @@ interface ExecutivePhotoProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const DEFAULT_PHOTO = PERSONAL_INFO.photoUrl || 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80';
+const DEFAULT_PHOTO = PERSONAL_INFO.photoUrl;
 
 export const ExecutivePhoto: React.FC<ExecutivePhotoProps> = ({ className = '', size = 'lg' }) => {
   const [photoUrl, setPhotoUrl] = useState<string>(DEFAULT_PHOTO);
   const [isHovered, setIsHovered] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Load photo from localStorage if previously stored
+  // Load photo from localStorage if a custom image was uploaded
   useEffect(() => {
     const savedPhoto = localStorage.getItem('pk_custom_photo');
-    if (savedPhoto) {
+    if (savedPhoto && savedPhoto.startsWith('data:image')) {
       setPhotoUrl(savedPhoto);
+    } else {
+      // Clear any outdated placeholder from cache
+      if (savedPhoto) {
+        localStorage.removeItem('pk_custom_photo');
+      }
+      setPhotoUrl(DEFAULT_PHOTO);
     }
   }, []);
 
@@ -117,7 +123,7 @@ export const ExecutivePhoto: React.FC<ExecutivePhotoProps> = ({ className = '', 
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md transition-all cursor-pointer"
               >
                 <Camera className="w-3.5 h-3.5" />
                 Upload / Change Photo
@@ -131,14 +137,17 @@ export const ExecutivePhoto: React.FC<ExecutivePhotoProps> = ({ className = '', 
               </button>
             </div>
           )}
-        </div>
-      </div>
 
-      {/* Floating Status Pill */}
-      <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/95 border border-slate-700/80 text-[11px] font-medium text-slate-200 shadow-lg backdrop-blur-md">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>Active Enterprise Strategy Leader</span>
+          {/* Quick upload button always accessible on the corner */}
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            title="Upload your photo"
+            className="absolute bottom-2.5 right-2.5 z-10 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-900/90 hover:bg-blue-600 text-slate-200 hover:text-white border border-slate-700/80 text-[11px] font-medium shadow-md transition-all backdrop-blur-xs cursor-pointer"
+          >
+            <Camera className="w-3 h-3 text-blue-400" />
+            <span>Upload Photo</span>
+          </button>
         </div>
       </div>
     </div>

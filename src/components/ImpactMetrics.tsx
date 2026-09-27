@@ -120,19 +120,6 @@ export const ImpactMetrics: React.FC = () => {
             );
           })}
         </div>
-
-        {/* Bottom Context Banner */}
-        <div className="mt-10 p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-400">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-blue-400" />
-            <span>
-              Metrics documented from enterprise leadership across <strong className="text-slate-300">Capgemini</strong> and <strong className="text-slate-300">Accenture</strong>.
-            </span>
-          </div>
-          <span className="font-mono text-slate-400">
-            Source: Verified Career Credentials
-          </span>
-        </div>
       </div>
     </section>
   );

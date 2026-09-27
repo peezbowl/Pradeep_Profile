@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText, Download, ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { Menu, X, FileText, Download } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface NavbarProps {
@@ -82,13 +82,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onDownloadResume }
             }}
             className="group flex items-center gap-3 cursor-pointer"
           >
-            <div className="w-8 h-8 rounded overflow-hidden border border-blue-500/40 shadow-md shadow-blue-600/30 shrink-0 bg-blue-600 flex items-center justify-center font-bold text-white text-xs">
-              <img
-                src={PERSONAL_INFO.photoUrl || 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'}
-                alt="Pradeep Kumar"
-                className="w-full h-full object-cover object-top"
-                referrerPolicy="no-referrer"
-              />
+            <div className="w-8 h-8 rounded-lg border border-blue-500/40 bg-gradient-to-br from-blue-600 to-indigo-700 shadow-md shadow-blue-600/30 shrink-0 flex items-center justify-center font-bold text-white text-xs font-display tracking-wider group-hover:border-blue-400 transition-colors">
+              PK
             </div>
             <div className="flex flex-col">
               <span className="text-sm sm:text-base font-semibold tracking-tight text-white uppercase group-hover:text-blue-400 transition-colors font-display">
@@ -140,27 +135,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onDownloadResume }
               <Download className="w-3.5 h-3.5" />
               <span>Download CV</span>
             </button>
-
-            {/* Executive Profile Avatar in Top Right */}
-            <a
-              href="#hero"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('#hero');
-              }}
-              title="Pradeep Kumar - Executive Profile"
-              className="relative group block cursor-pointer ml-1"
-            >
-              <div className="w-8 h-8 rounded-lg overflow-hidden border border-slate-700 bg-slate-800 group-hover:border-blue-500 transition-all shadow-sm">
-                <img
-                  src={PERSONAL_INFO.photoUrl || 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'}
-                  alt="Pradeep Kumar"
-                  className="w-full h-full object-cover object-top"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-[#1e293b]" />
-            </a>
           </div>
 
           {/* Mobile hamburger toggle */}

@@ -40,7 +40,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onDownloadResume, onEx
                 className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-[#1e293b] border border-slate-700/80 text-xs font-semibold text-slate-300 mb-5 shadow-sm uppercase tracking-wider font-mono"
               >
                 <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                <span>Senior Strategy & Enablement</span>
+                <span>ENTERPRISE KNOWLEDGE LEADER</span>
                 <span className="text-slate-600">•</span>
                 <span className="text-blue-400 font-bold">18+ Years</span>
               </motion.div>
@@ -65,8 +65,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onDownloadResume, onEx
                 <span>Sales Enablement </span>
                 <span className="text-blue-500">&</span>
                 <span> Knowledge Strategy</span>
-                <span className="text-slate-600 mx-2 hidden sm:inline">|</span>
-                <span className="text-slate-400 font-medium block sm:inline mt-1 sm:mt-0">Competitive Intelligence</span>
+                <span className="text-white mx-2 hidden sm:inline">|</span>
+                <span className="text-white font-medium block sm:inline mt-1 sm:mt-0">Competitive Intelligence</span>
               </motion.div>
 
               {/* Supporting statement strictly per user request */}

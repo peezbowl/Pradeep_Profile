@@ -8,6 +8,7 @@ import {
   CertificationItem,
   ThoughtLeadershipArticle,
 } from '../types';
+import executivePhotoUrl from '../assets/images/pradeep_executive_1790502834024.jpg';
 
 export const PERSONAL_INFO = {
   name: 'Pradeep Kumar',
@@ -19,9 +20,9 @@ export const PERSONAL_INFO = {
   phone: '+91 09769837512',
   linkedinUrl: 'https://www.linkedin.com/in/pkumariimk/',
   linkedinHandle: 'pkumariimk',
-  photoUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80',
+  photoUrl: executivePhotoUrl,
   statement:
-    '18+ years of experience turning knowledge, competitive intelligence and market insights into stronger sales strategies, pursuit readiness and business outcomes.',
+    '18+ years enabling sales teams through knowledge governance, competitive battlecards, win/loss analysis, and structured deal pursuit support.',
   bio:
     'Strategic Sales Enablement and Knowledge Management leader supporting global technology and consulting portfolios across North American and global enterprise markets. Trusted partner to global portfolio leaders, embedding win/loss intelligence, Tier-1 competitive battlecards, and scalable knowledge governance into high-velocity deal pursuit engines.',
   portfolioFocus: ['Consulting', 'Cloud Infrastructure', 'Application Services', 'Business Services'],
